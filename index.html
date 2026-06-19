@@ -1,7 +1,5 @@
-<!DOCTYPE html><html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For My Ammu ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For Ammu ❤️</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
 
 *{
 margin:0;
@@ -9,11 +7,48 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
+font-family:'Inter',sans-serif;
+background:#0B1220;
+color:#F8FAFC;
 overflow-x:hidden;
-color:white;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top right, rgba(212,175,55,.15), transparent 30%),
+radial-gradient(circle at bottom left, rgba(212,175,55,.08), transparent 30%);
+pointer-events:none;
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px;
+display:flex;
+justify-content:center;
+backdrop-filter:blur(15px);
+background:rgba(0,0,0,.2);
+z-index:999;
+}
+
+nav span{
+color:#D4AF37;
+font-weight:600;
+letter-spacing:2px;
 }
 
 #welcome{
@@ -21,32 +56,41 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 padding:20px;
+text-align:center;
 }
 
-.card{
-background:rgba(255,255,255,.15);
+.welcome-card{
+max-width:600px;
+padding:50px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
 backdrop-filter:blur(15px);
-padding:40px;
-border-radius:30px;
-max-width:500px;
+border:1px solid rgba(255,255,255,.08);
 }
 
-.card h1{
-font-family:'Great Vibes',cursive;
+.welcome-card h1{
+font-family:'Playfair Display',serif;
 font-size:4rem;
+color:#D4AF37;
+margin-bottom:15px;
 }
 
-.card button{
-margin-top:20px;
-padding:15px 30px;
+.welcome-card p{
+color:#CBD5E1;
+line-height:1.8;
+}
+
+.open-btn{
+margin-top:30px;
+padding:15px 40px;
 border:none;
-border-radius:30px;
-background:white;
-color:#ff4081;
-font-weight:bold;
+border-radius:50px;
+background:#D4AF37;
+color:#0B1220;
+font-weight:700;
 font-size:18px;
+cursor:pointer;
 }
 
 .hero{
@@ -55,140 +99,118 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:20px;
+padding:40px 20px;
 text-align:center;
 }
 
 .hero img{
-width:300px;
-height:300px;
+width:320px;
+height:420px;
 object-fit:cover;
-border-radius:50%;
-border:6px solid white;
-box-shadow:0 0 40px rgba(255,255,255,.5);
+border-radius:30px;
+box-shadow:
+0 25px 60px rgba(0,0,0,.5),
+0 0 50px rgba(212,175,55,.15);
 }
 
 .hero h1{
-font-family:'Great Vibes',cursive;
-font-size:5rem;
-margin-top:20px;
+font-family:'Playfair Display',serif;
+font-size:4rem;
+margin-top:30px;
+color:#D4AF37;
 }
 
-.glass{
+.hero p{
+margin-top:10px;
+font-size:1.1rem;
+color:#CBD5E1;
+}
+
+.section{
 width:92%;
-max-width:900px;
-margin:25px auto;
-background:rgba(255,255,255,.15);
+max-width:1000px;
+margin:60px auto;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,.04);
 backdrop-filter:blur(15px);
-padding:30px;
-border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.section h2{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+color:#D4AF37;
+margin-bottom:25px;
+}
+
+.spotify{
+border-radius:20px;
+overflow:hidden;
 }
 
 #typewriter{
-white-space:pre-line;
-line-height:1.8;
+line-height:2;
 font-size:18px;
+color:#E2E8F0;
+white-space:pre-line;
 }
 
-.slider{
-overflow:hidden;
-position:relative;
-}
-
-.slide-track{
-display:flex;
-width:max-content;
-animation:scroll 50s linear infinite;
-}
-
-.slide-track img{
-width:250px;
-height:350px;
-object-fit:cover;
-margin:10px;
-border-radius:20px;
-cursor:pointer;
-transition:.4s;
-}
-
-.slide-track img:hover{
-transform:scale(1.08);
-}
-
-@keyframes scroll{
-from{transform:translateX(0);}
-to{transform:translateX(-50%);}
-}
-
-#lightbox{
+.hidden{
 display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.95);
-justify-content:center;
-align-items:center;
-z-index:99999;
-}
-
-#lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:20px;
-}
-
-#finalSurprise{
-text-align:center;
-padding:60px;
-}
-
-#finalBtn{
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:40px;
-background:white;
-color:#ff4081;
-font-weight:bold;
-}
-
-.floating{
-position:fixed;
-bottom:-50px;
-font-size:24px;
-animation:floatUp linear infinite;
-pointer-events:none;
-}
-
-@keyframes floatUp{
-to{
-transform:translateY(-120vh);
-opacity:0;
-}
-}
-
-footer{
-padding:50px;
-text-align:center;
 }
 
 </style></head><body><script>
 
-const pass = prompt("❤️ A little surprise from your Gumma...");
+document.body.style.display="none";
 
-if(pass !== "OnlyAmmuKnows❤️"){
+const password = prompt("A little surprise from your Gumma ❤️");
 
-document.body.innerHTML="<h1 style='padding-top:150px;text-align:center;'>❤️ Access Denied ❤️</h1>";
+if(password === "OnlyAmmuKnows❤️"){
+
+document.body.style.display="block";
+
+}else{
+
+document.body.innerHTML=`
+
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#0B1220;
+color:white;
+font-family:Inter;
+font-size:28px;
+">
+
+Access Denied
+
+</div>
+
+`;
+
+document.body.style.display="block";
 
 throw new Error();
 
 }
 
-</script><div id="welcome"><div class="card"><h1>Ammu ❤️</h1><p>A message from your Gumma</p><button onclick="openSurprise()">
-Open My Heart ❤️
-</button></div></div><div id="content" style="display:none;"><section class="hero"><img src="IMG-20260613-WA0092.jpg"><h1>Happy Birthday Ammu ❤️</h1><p>20 June ✨</p></section><div class="glass"><h2>🎵 Our Song</h2><iframe
+</script><nav><span>FOR AMMU</span>
+
+</nav><div id="welcome"><div class="welcome-card"><h1>Ammu</h1><p>Before you continue...
+
+This isn't just a birthday wish.
+
+It's a small collection of memories,
+feelings and moments from your Gumma.
+
+</p><button class="open-btn" onclick="openSite()">Open My Heart
+
+</button></div></div><div id="mainContent" class="hidden"><section class="hero"><img src="IMG-20260613-WA0092.jpg"><h1>Happy Birthday Ammu</h1><p>20 June • A Story Worth Remembering
+
+</p></section><div class="section"><h2>The Song That Stays</h2><div class="spotify"><iframe
 style="border-radius:12px"
 src="https://open.spotify.com/embed/track/41poRcXRASGAqDinA3b0Vo"
 width="100%"
@@ -196,213 +218,612 @@ height="152"
 frameBorder="0"
 allowfullscreen=""
 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe></div><div class="glass"><h2>💌 A Letter For Ammu</h2><br><div id="typewriter"></div></div><div class="glass"><h2>📸 Beautiful Memories</h2><div class="slider"><div class="slide-track"><img src="IMG-20260422-WA0025.jpg">
-<img src="IMG-20260427-WA0021.jpg">
-<img src="IMG-20260429-WA0061.jpg">
-<img src="IMG-20260429-WA0062.jpg">
-<img src="IMG-20260429-WA0082.jpg">
-<img src="IMG-20260507-WA0013.jpg">
-<img src="IMG-20260507-WA0014.jpg">
-<img src="IMG-20260507-WA0015.jpg">
-<img src="IMG-20260507-WA0016.jpg">
-<img src="IMG-20260507-WA0017.jpg">
-<img src="IMG-20260507-WA0018.jpg">
-<img src="IMG-20260507-WA0019.jpg">
-<img src="IMG-20260507-WA0020.jpg">
-<img src="IMG-20260507-WA0021.jpg">
-<img src="IMG-20260613-WA0090.jpg">
-<img src="IMG-20260613-WA0091.jpg">
-<img src="IMG-20260613-WA0092.jpg">
-<img src="IMG-20260613-WA0093.jpg">
-<img src="IMG-20260613-WA0094.jpg">
-<img src="IMG-20260613-WA0096.jpg"></div></div></div><div id="finalSurprise"><button id="finalBtn">
-❤️ One Last Thing...
-</button></div><footer>Made With Love ❤️
-
-  
-</footer><div id="lightbox"><img id="lightboxImg"></div><script>
+</iframe></div></div><div class="section"><h2>A Letter For Ammu</h2><div id="typewriter"></div></div>
+<script>
 
 const letter = `
 
-Dear Ammu ❤️,
+Dear Ammu,
 
-I don't know if words will ever be enough.
+Happy Birthday.
 
-Some people enter our lives and become memories.
+I sat for a long time thinking about what I should write here.
 
-You became a feeling.
+The truth is, no matter how many words I use,
+they never seem enough when it comes to you.
 
-The truth is our journey was never perfect.
-We had our ups and downs, confusion, silence,
-and moments where neither of us knew what tomorrow would bring.
+We never had the easiest story.
 
-Yet somehow, every time I think about the moments that made me smile,
-your face is always there.
+There were moments of happiness.
+Moments of confusion.
+Moments where neither of us knew what tomorrow would look like.
+
+Yet somehow, through all of that,
+you became one of the most beautiful parts of my days.
 
 Your laughter has a strange power.
+
 It makes worries disappear for a while.
+
 Your kindness makes people feel valued.
+
 And your presence brings a comfort that is impossible to explain.
 
-There were days when life felt heavy,
-and a simple message from you made everything feel lighter.
+There were days when life felt heavy.
+
+And then a simple message from you would make everything feel lighter.
 
 Not because you solved my problems.
 
 But because you were you.
 
 Thank you for every conversation.
+
 Thank you for every memory.
+
 Thank you for every smile.
 
 I don't know what life has planned for us.
 
 But I know this.
 
-You'll always be someone special to me.
+Some people become memories.
 
-No matter where life takes us,
-you'll always be my Ammu.
+You became a feeling.
 
-And I'll always smile when I hear you call me Gumma.
+And that feeling will always remain special.
 
-Happy Birthday Ammu ❤️
+No matter where life takes us.
 
-Forever cheering for your happiness,
+No matter how many years pass.
+
+You'll always be someone I genuinely care about.
+
+Happy Birthday Ammu.
+
+May your smile stay bright.
+May your heart stay happy.
+May life give you everything you deserve.
+
+With all my warmth,
 
 Your Gumma ❤️
 
 `;
 
+</script><div class="section"><h2>Moments I Never Want To Forget</h2><p style="
+line-height:2;
+color:#CBD5E1;
+font-size:18px;
+">Every photo below carries a memory.
+
+A moment.
+
+A smile.
+
+A feeling.
+
+And together they tell a story.
+
+</p></div><div class="section"><h2>Our Memories</h2><div class="gallery"><img src="IMG-20260422-WA0025.jpg"><img src="IMG-20260427-WA0021.jpg"><img src="IMG-20260429-WA0061.jpg"><img src="IMG-20260429-WA0062.jpg"><img src="IMG-20260429-WA0082.jpg"><img src="IMG-20260507-WA0013.jpg"><img src="IMG-20260507-WA0014.jpg"><img src="IMG-20260507-WA0015.jpg"><img src="IMG-20260507-WA0016.jpg"><img src="IMG-20260507-WA0017.jpg"><img src="IMG-20260507-WA0018.jpg"><img src="IMG-20260507-WA0019.jpg"><img src="IMG-20260507-WA0020.jpg"><img src="IMG-20260507-WA0021.jpg"><img src="IMG-20260613-WA0090.jpg"><img src="IMG-20260613-WA0091.jpg"><img src="IMG-20260613-WA0092.jpg"><img src="IMG-20260613-WA0093.jpg"><img src="IMG-20260613-WA0094.jpg"><img src="IMG-20260613-WA0096.jpg"></div></div><style>
+
+.gallery{
+
+columns:3;
+
+column-gap:18px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+margin-bottom:18px;
+
+border-radius:22px;
+
+cursor:pointer;
+
+transition:.5s;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+break-inside:avoid;
+
+}
+
+.gallery img:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+}
+
+.memory-card{
+
+padding:30px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.04);
+
+margin-top:25px;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.memory-card h3{
+
+color:#D4AF37;
+
+margin-bottom:15px;
+
+font-family:'Playfair Display';
+
+}
+
+.memory-card p{
+
+line-height:2;
+
+color:#CBD5E1;
+
+}
+
+@media(max-width:768px){
+
+.gallery{
+
+columns:2;
+
+}
+
+}
+
+</style><div class="section"><h2>What You Mean To Me</h2><div class="memory-card"><h3>Your Smile</h3><p>A smile that can quietly turn an ordinary day into a beautiful one.
+
+</p></div><div class="memory-card"><h3>Your Kindness</h3><p>The way you care about people makes you rare in a world that often forgets to be gentle.
+
+</p></div><div class="memory-card"><h3>Your Presence</h3><p>Some people bring peace without even trying.
+
+You are one of them.
+
+</p></div></div><div class="section"><h2>Before You Leave...</h2><p style="
+line-height:2;
+font-size:18px;
+color:#CBD5E1;
+">There's still one last thing I want you to see.
+
+Scroll a little further.
+
+</p></div>
+<div id="letterModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close">&times;</span>
+
+<h2>💌 A Letter For Ammu</h2>
+
+<p id="typedText"></p>
+
+</div>
+
+</div>
+
+<div id="photoModal" class="photoModal">
+
+<span class="photoClose">&times;</span>
+
+<img id="modalImg">
+
+</div>
+
+<div class="section">
+
+<button id="openLetter">
+
+Open My Heart ❤️
+
+</button>
+
+</div>
+
+<div class="section">
+
+<h2>OnlyAmmuKnows ❤️</h2>
+
+<p style="
+font-size:20px;
+color:#CBD5E1;
+line-height:2;
+max-width:800px;
+margin:auto;
+">
+
+Some stories are written in books.
+
+Some stories are written in memories.
+
+Ours is written in moments that neither of us will ever truly forget.
+
+Happy Birthday Ammu.
+
+Forever grateful that our paths crossed.
+
+❤️
+
+</p>
+
+</div>
+
+<style>
+
+#openLetter{
+
+padding:18px 40px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#D4AF37,#FFD700);
+
+color:black;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 35px rgba(212,175,55,.4);
+
+}
+
+#openLetter:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+}
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+z-index:99999;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.92);
+
+backdrop-filter:blur(10px);
+
+}
+
+.modal-content{
+
+background:#111827;
+
+padding:30px;
+
+max-width:800px;
+
+margin:40px auto;
+
+border-radius:25px;
+
+color:white;
+
+border:1px solid rgba(255,255,255,.1);
+
+max-height:80vh;
+
+overflow:auto;
+
+}
+
+.close{
+
+float:right;
+
+font-size:35px;
+
+cursor:pointer;
+
+}
+
+#typedText{
+
+line-height:2;
+
+white-space:pre-wrap;
+
+color:#CBD5E1;
+
+}
+
+.photoModal{
+
+display:none;
+
+position:fixed;
+
+z-index:999999;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.96);
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.photoModal img{
+
+max-width:95%;
+
+max-height:90%;
+
+border-radius:25px;
+
+box-shadow:0 0 50px rgba(255,255,255,.2);
+
+animation:zoomIn .5s ease;
+
+}
+
+.photoClose{
+
+position:absolute;
+
+right:25px;
+
+top:20px;
+
+font-size:40px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+@keyframes zoomIn{
+
+from{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.heart{
+
+position:fixed;
+
+font-size:25px;
+
+pointer-events:none;
+
+animation:fall 5s linear forwards;
+
+z-index:999999;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-100px) rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+<script>
+
+const modal=document.getElementById("letterModal");
+
+const btn=document.getElementById("openLetter");
+
+const closeBtn=document.querySelector(".close");
+
+const typedText=document.getElementById("typedText");
+
+let typed=false;
+
+btn.onclick=()=>{
+
+modal.style.display="block";
+
+createHeartRain();
+
+if(!typed){
+
 let i=0;
 
-function typeWriter(){
+const speed=25;
+
+function typing(){
 
 if(i<letter.length){
 
-document.getElementById("typewriter").innerHTML += letter.charAt(i);
+typedText.innerHTML+=letter.charAt(i);
 
 i++;
 
-setTimeout(typeWriter,35);
+setTimeout(typing,speed);
 
 }
 
 }
 
-function openSurprise(){
+typing();
 
-document.getElementById("welcome").style.display="none";
+typed=true;
 
-document.getElementById("content").style.display="block";
+}
 
-typeWriter();
+}
 
-for(let i=0;i<120;i++){
+closeBtn.onclick=()=>{
+
+modal.style.display="none";
+
+}
+
+window.onclick=(e)=>{
+
+if(e.target==modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+function createHeartRain(){
+
+for(let i=0;i<60;i++){
 
 setTimeout(()=>{
 
-const heart=document.createElement("div");
+let heart=document.createElement("div");
 
-heart.innerHTML="💖";
+heart.className="heart";
 
-heart.style.position="fixed";
-
-heart.style.left=Math.random()*window.innerWidth+"px";
-
-heart.style.top=window.innerHeight+"px";
-
-heart.style.fontSize="30px";
-
-document.body.appendChild(heart);
-
-heart.animate([
-{transform:"translateY(0)"},
-{transform:"translateY(-1000px)"}
-],{
-duration:5000
-});
-
-setTimeout(()=>heart.remove(),5000);
-
-},i*40);
-
-}
-
-}
-
-setInterval(()=>{
-
-const heart=document.createElement("div");
-
-heart.className="floating";
-
-heart.innerHTML="❤️";
+heart.innerHTML=["❤️","💖","💕","💘","💝","✨"][Math.floor(Math.random()*6)];
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.animationDuration=(4+Math.random()*6)+"s";
+heart.style.fontSize=(20+Math.random()*30)+"px";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>heart.remove(),10000);
+setTimeout(()=>heart.remove(),5000);
 
-},700);
+},i*120);
 
-document.querySelectorAll(".slide-track img").forEach(img=>{
+}
+
+}
+
+const images=document.querySelectorAll(".gallery img");
+
+const photoModal=document.getElementById("photoModal");
+
+const modalImg=document.getElementById("modalImg");
+
+const photoClose=document.querySelector(".photoClose");
+
+images.forEach(img=>{
 
 img.addEventListener("click",()=>{
 
-document.getElementById("lightbox").style.display="flex";
+photoModal.style.display="flex";
 
-document.getElementById("lightboxImg").src=img.src;
+modalImg.src=img.src;
 
-for(let i=0;i<25;i++){
-
-setTimeout(()=>{
-
-const heart=document.createElement("div");
-
-heart.innerHTML="❤️";
-
-heart.style.position="fixed";
-
-heart.style.left=(Math.random()*window.innerWidth)+"px";
-
-heart.style.top=(Math.random()*window.innerHeight)+"px";
-
-heart.style.fontSize="24px";
-
-document.body.appendChild(heart);
-
-heart.animate([
-{opacity:1},
-{opacity:0}
-],{
-duration:1500
-});
-
-setTimeout(()=>heart.remove(),1500);
-
-},i*50);
-
-}
+createHeartRain();
 
 });
 
 });
 
-document.getElementById("lightbox").onclick=function(){
+photoClose.onclick=()=>{
 
-this.style.display="none";
-
-}
-
-document.getElementById("finalBtn").onclick=function(){
-
-alert("❤️ Thank you for being part of my life, Ammu. Some people become memories. You became a feeling. ❤️");
+photoModal.style.display="none";
 
 }
 
-</script></body>
+photoModal.onclick=(e)=>{
+
+if(e.target===photoModal){
+
+photoModal.style.display="none";
+
+}
+
+}
+
+const countdown=document.getElementById("countdown");
+
+function updateCountdown(){
+
+const target=new Date("June 20, 2026 00:00:00").getTime();
+
+const now=new Date().getTime();
+
+const distance=target-now;
+
+if(distance<0){
+
+countdown.innerHTML="Happy Birthday Ammu ❤️";
+
+return;
+
+}
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const mins=Math.floor((distance%(1000*60*60))/(1000*60));
+
+countdown.innerHTML=`${days} Days ${hours} Hours ${mins} Minutes`;
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+</script>
+
+</body>
+
 </html>
