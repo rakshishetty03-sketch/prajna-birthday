@@ -2,108 +2,329 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Prajna ❤️</title><style>
-body{
+<title>For My Ammu ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+*{
 margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
 color:white;
+overflow-x:hidden;
+}
+
+#welcomeScreen{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
 text-align:center;
 }
 
+.welcomeCard{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:25px;
+max-width:500px;
+box-shadow:0 10px 40px rgba(0,0,0,.2);
+}
+
+.welcomeCard h1{
+font-family:'Great Vibes',cursive;
+font-size:4rem;
+margin-bottom:15px;
+}
+
+.welcomeCard button{
+margin-top:20px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4081;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
 .hero{
-padding:40px 20px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+text-align:center;
+}
+
+.hero img{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid white;
+box-shadow:0 0 40px rgba(255,255,255,.5);
 }
 
 .hero h1{
-font-size:3rem;
-margin-bottom:10px;
+font-family:'Great Vibes',cursive;
+font-size:4.5rem;
+margin-top:20px;
 }
 
 .hero p{
+margin-top:10px;
 font-size:1.2rem;
 }
 
-.message{
-max-width:800px;
-margin:20px auto;
-padding:25px;
-background:rgba(255,255,255,0.15);
-border-radius:20px;
-backdrop-filter:blur(10px);
+.glass{
+width:92%;
+max-width:900px;
+margin:25px auto;
+padding:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(15px);
+border-radius:25px;
 }
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
-padding:20px;
+margin-top:20px;
 }
 
 .gallery img{
 width:100%;
-border-radius:15px;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
+border-radius:20px;
+cursor:pointer;
+transition:.4s;
 }
 
-.btn{
-display:inline-block;
-margin:20px;
-padding:12px 25px;
-background:white;
-color:#e91e63;
-text-decoration:none;
-font-weight:bold;
-border-radius:30px;
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
 }
 
 footer{
-padding:30px;
+text-align:center;
+padding:40px;
 font-size:18px;
 }
-</style></head><body><script>
-const password = prompt("❤️ Enter Password To Open Prajna's Birthday Surprise");
 
-if(password !== "Prajna❤️"){
-document.body.innerHTML =
-"<div style='padding-top:100px;font-family:Arial;'><h1>❌ Access Denied</h1><p>This surprise is only for Prajna ❤️</p></div>";
-throw new Error("Wrong password");
+.heart{
+position:fixed;
+pointer-events:none;
+z-index:9999;
+font-size:30px;
 }
-</script><div class="hero"><h1>🎂 Happy Birthday Prajna ❤️</h1><p>
-To the girl whose smile makes every day brighter ✨
-</p><a class="btn"
-href="https://www.youtube.com/results?search_query=Kareyole+Sanchith+Hegde"
-target="_blank">
-🎵 Play Kareyole
-</a>
 
-</div><div class="message"><h2>Dear Prajna ❤️</h2><p>
-There are some people who walk into our lives and make everything feel a little brighter.For me, that's you.
+.spotify{
+margin-top:20px;
+}
 
-I don't know what the future holds, and we've had our share of ups and downs, but one thing has always stayed the same — being with you feels special.
+.floating-heart{
+position:fixed;
+bottom:-50px;
+font-size:24px;
+animation:floatUp linear infinite;
+opacity:.8;
+}
 
-Your laughter has a way of making difficult days easier.
-Your kindness, warmth, and beautiful heart are things I truly admire.
+@keyframes floatUp{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style></head><body><script>
+const pass = prompt("❤️ A little surprise from your Gumma...");
 
-Thank you for every memory, every smile, every conversation, and every moment we've shared.
+if(pass !== "OnlyAmmuKnows❤️"){
+document.body.innerHTML = `
+<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;">
+<h1>❤️ Access Denied ❤️</h1>
+<p>This surprise is only for Ammu.</p>
+</div>`;
+throw new Error("Wrong Password");
+}
+</script><div id="welcomeScreen"><div class="welcomeCard"><h1>Ammu ❤️</h1><p>
+A message from your Gumma ❤️
+</p><button onclick="openSurprise()">
+Open My Heart, Ammu ❤️
+</button></div></div><div id="mainContent" style="display:none;"><section class="hero"><img src="IMG-20260613-WA0092.jpg"><h1>Happy Birthday Ammu ❤️</h1><p>20 June ✨</p><p>
+To the girl whose smile can make even the hardest day feel lighter.
+</p></section><div class="glass"><h2>🎵 Our Song</h2><div class="spotify"><iframe
+style="border-radius:12px"
+src="https://open.spotify.com/embed/track/41poRcXRASGAqDinA3b0Vo"
+width="100%"
+height="152"
+frameBorder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe></div></div><div class="glass"><h2>💌 Dear Ammu</h2><br><p>
+There are some people who walk into our lives and quietly become a part of our happiest memories.For me, that person is you.
 
-On your special day, I wish you happiness, success, peace, good health, and countless reasons to smile.
+I don't know what the future holds. We've had our ups and downs, moments of certainty and moments of confusion.
 
-Happy Birthday once again ❤️
+But through everything, one thing never changed.
 
-— Rakshith
+Being with you feels special.
 
-</p></div><h2>📸 Beautiful Memories</h2><div class="gallery"><img src="IMG-20260613-WA0090.jpg">
+Your laughter has a way of making worries disappear.
+Your kindness makes people feel valued.
+And your smile carries a warmth that stays with me long after the moment passes.
+
+Thank you for every conversation, every laugh, every memory and every little moment that became special simply because it was shared with you.
+
+Today is your day.
+
+I hope life gives you every happiness you deserve, every success you dream of, and countless reasons to smile.
+
+No matter how many ups and downs we've had, you'll always be my Ammu, and I'll always smile when I hear you call me Gumma.
+
+Happy Birthday Ammu ❤️
+
+— Your Gumma
+
+</p></div><div class="glass"><h2>📸 Beautiful Memories</h2><div class="gallery"><img src="IMG-20260613-WA0090.jpg">
 <img src="IMG-20260613-WA0091.jpg">
 <img src="IMG-20260613-WA0092.jpg">
 <img src="IMG-20260613-WA0093.jpg">
 <img src="IMG-20260613-WA0094.jpg">
-<img src="IMG-20260613-WA0096.jpg"><img src="IMG-20260507-WA0013.jpg">
-<img src="IMG-20260507-WA0014.jpg">
-<img src="IMG-20260507-WA0015.jpg">
-<img src="IMG-20260507-WA0016.jpg">
-<img src="IMG-20260507-WA0017.jpg">
-<img src="IMG-20260507-WA0018.jpg"></div><footer>
-❤️ Made with love for Prajna ❤️
-</footer></body>
+<img src="IMG-20260613-WA0096.jpg"></div></div><footer>
+❤️ Made with love for Ammu ❤️
+</footer></div><div id="lightbox" onclick="closeLightbox()">
+<img id="lightboxImg">
+</div><script>
+
+function openSurprise(){
+
+document.getElementById("welcomeScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+
+for(let i=0;i<100;i++){
+
+setTimeout(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="💖";
+heart.className="heart";
+
+heart.style.left=Math.random()*window.innerWidth+"px";
+heart.style.top=window.innerHeight+"px";
+
+document.body.appendChild(heart);
+
+heart.animate([
+{transform:"translateY(0px)",opacity:1},
+{transform:"translateY(-1000px)",opacity:0}
+],{
+duration:5000
+});
+
+setTimeout(()=>heart.remove(),5000);
+
+},i*40);
+
+}
+
+}
+
+function createHeart(x,y){
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+heart.className="heart";
+
+heart.style.left=x+"px";
+heart.style.top=y+"px";
+
+document.body.appendChild(heart);
+
+heart.animate([
+{transform:"translateY(0px)",opacity:1},
+{transform:"translateY(-150px)",opacity:0}
+],{
+duration:1500
+});
+
+setTimeout(()=>heart.remove(),1500);
+
+}
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+
+img.addEventListener("click",(e)=>{
+
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightboxImg").src=img.src;
+
+for(let i=0;i<20;i++){
+
+setTimeout(()=>{
+
+createHeart(
+e.clientX+(Math.random()*120-60),
+e.clientY+(Math.random()*120-60)
+);
+
+},i*40);
+
+}
+
+});
+
+});
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
+}
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="💖";
+heart.className="floating-heart";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),10000);
+
+},700);
+
+</script></body>
 </html>
