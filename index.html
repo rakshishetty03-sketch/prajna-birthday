@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Ammu ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For My Ammu ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+
 *{
 margin:0;
 padding:0;
@@ -12,44 +12,41 @@ box-sizing:border-box;
 body{
 font-family:'Poppins',sans-serif;
 background:linear-gradient(135deg,#ff758c,#ff7eb3);
-color:white;
 overflow-x:hidden;
+color:white;
 }
 
-#welcomeScreen{
+#welcome{
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
-.welcomeCard{
+.card{
 background:rgba(255,255,255,.15);
 backdrop-filter:blur(15px);
 padding:40px;
-border-radius:25px;
+border-radius:30px;
 max-width:500px;
-box-shadow:0 10px 40px rgba(0,0,0,.2);
 }
 
-.welcomeCard h1{
+.card h1{
 font-family:'Great Vibes',cursive;
 font-size:4rem;
-margin-bottom:15px;
 }
 
-.welcomeCard button{
+.card button{
 margin-top:20px;
 padding:15px 30px;
 border:none;
 border-radius:30px;
 background:white;
 color:#ff4081;
-font-size:18px;
 font-weight:bold;
-cursor:pointer;
+font-size:18px;
 }
 
 .hero{
@@ -58,13 +55,13 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:30px;
+padding:20px;
 text-align:center;
 }
 
 .hero img{
-width:280px;
-height:280px;
+width:300px;
+height:300px;
 object-fit:cover;
 border-radius:50%;
 border:6px solid white;
@@ -73,41 +70,54 @@ box-shadow:0 0 40px rgba(255,255,255,.5);
 
 .hero h1{
 font-family:'Great Vibes',cursive;
-font-size:4.5rem;
+font-size:5rem;
 margin-top:20px;
-}
-
-.hero p{
-margin-top:10px;
-font-size:1.2rem;
 }
 
 .glass{
 width:92%;
 max-width:900px;
 margin:25px auto;
-padding:30px;
 background:rgba(255,255,255,.15);
 backdrop-filter:blur(15px);
+padding:30px;
 border-radius:25px;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-margin-top:20px;
+#typewriter{
+white-space:pre-line;
+line-height:1.8;
+font-size:18px;
 }
 
-.gallery img{
-width:100%;
+.slider{
+overflow:hidden;
+position:relative;
+}
+
+.slide-track{
+display:flex;
+width:max-content;
+animation:scroll 50s linear infinite;
+}
+
+.slide-track img{
+width:250px;
+height:350px;
+object-fit:cover;
+margin:10px;
 border-radius:20px;
 cursor:pointer;
 transition:.4s;
 }
 
-.gallery img:hover{
-transform:scale(1.04);
+.slide-track img:hover{
+transform:scale(1.08);
+}
+
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
 }
 
 #lightbox{
@@ -117,10 +127,10 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.9);
+background:rgba(0,0,0,.95);
 justify-content:center;
 align-items:center;
-z-index:9999;
+z-index:99999;
 }
 
 #lightbox img{
@@ -129,59 +139,56 @@ max-height:90%;
 border-radius:20px;
 }
 
-footer{
+#finalSurprise{
 text-align:center;
-padding:40px;
-font-size:18px;
+padding:60px;
 }
 
-.heart{
-position:fixed;
-pointer-events:none;
-z-index:9999;
-font-size:30px;
+#finalBtn{
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff4081;
+font-weight:bold;
 }
 
-.spotify{
-margin-top:20px;
-}
-
-.floating-heart{
+.floating{
 position:fixed;
 bottom:-50px;
 font-size:24px;
 animation:floatUp linear infinite;
-opacity:.8;
+pointer-events:none;
 }
 
 @keyframes floatUp{
-from{
-transform:translateY(0);
-opacity:1;
-}
 to{
 transform:translateY(-120vh);
 opacity:0;
 }
 }
+
+footer{
+padding:50px;
+text-align:center;
+}
+
 </style></head><body><script>
+
 const pass = prompt("❤️ A little surprise from your Gumma...");
 
 if(pass !== "OnlyAmmuKnows❤️"){
-document.body.innerHTML = `
-<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;">
-<h1>❤️ Access Denied ❤️</h1>
-<p>This surprise is only for Ammu.</p>
-</div>`;
-throw new Error("Wrong Password");
+
+document.body.innerHTML="<h1 style='padding-top:150px;text-align:center;'>❤️ Access Denied ❤️</h1>";
+
+throw new Error();
+
 }
-</script><div id="welcomeScreen"><div class="welcomeCard"><h1>Ammu ❤️</h1><p>
-A message from your Gumma ❤️
-</p><button onclick="openSurprise()">
-Open My Heart, Ammu ❤️
-</button></div></div><div id="mainContent" style="display:none;"><section class="hero"><img src="IMG-20260613-WA0092.jpg"><h1>Happy Birthday Ammu ❤️</h1><p>20 June ✨</p><p>
-To the girl whose smile can make even the hardest day feel lighter.
-</p></section><div class="glass"><h2>🎵 Our Song</h2><div class="spotify"><iframe
+
+</script><div id="welcome"><div class="card"><h1>Ammu ❤️</h1><p>A message from your Gumma</p><button onclick="openSurprise()">
+Open My Heart ❤️
+</button></div></div><div id="content" style="display:none;"><section class="hero"><img src="IMG-20260613-WA0092.jpg"><h1>Happy Birthday Ammu ❤️</h1><p>20 June ✨</p></section><div class="glass"><h2>🎵 Our Song</h2><iframe
 style="border-radius:12px"
 src="https://open.spotify.com/embed/track/41poRcXRASGAqDinA3b0Vo"
 width="100%"
@@ -189,64 +196,129 @@ height="152"
 frameBorder="0"
 allowfullscreen=""
 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe></div></div><div class="glass"><h2>💌 Dear Ammu</h2><br><p>
-There are some people who walk into our lives and quietly become a part of our happiest memories.For me, that person is you.
-
-I don't know what the future holds. We've had our ups and downs, moments of certainty and moments of confusion.
-
-But through everything, one thing never changed.
-
-Being with you feels special.
-
-Your laughter has a way of making worries disappear.
-Your kindness makes people feel valued.
-And your smile carries a warmth that stays with me long after the moment passes.
-
-Thank you for every conversation, every laugh, every memory and every little moment that became special simply because it was shared with you.
-
-Today is your day.
-
-I hope life gives you every happiness you deserve, every success you dream of, and countless reasons to smile.
-
-No matter how many ups and downs we've had, you'll always be my Ammu, and I'll always smile when I hear you call me Gumma.
-
-Happy Birthday Ammu ❤️
-
-— Your Gumma
-
-</p></div><div class="glass"><h2>📸 Beautiful Memories</h2><div class="gallery"><img src="IMG-20260613-WA0090.jpg">
+</iframe></div><div class="glass"><h2>💌 A Letter For Ammu</h2><br><div id="typewriter"></div></div><div class="glass"><h2>📸 Beautiful Memories</h2><div class="slider"><div class="slide-track"><img src="IMG-20260422-WA0025.jpg">
+<img src="IMG-20260427-WA0021.jpg">
+<img src="IMG-20260429-WA0061.jpg">
+<img src="IMG-20260429-WA0062.jpg">
+<img src="IMG-20260429-WA0082.jpg">
+<img src="IMG-20260507-WA0013.jpg">
+<img src="IMG-20260507-WA0014.jpg">
+<img src="IMG-20260507-WA0015.jpg">
+<img src="IMG-20260507-WA0016.jpg">
+<img src="IMG-20260507-WA0017.jpg">
+<img src="IMG-20260507-WA0018.jpg">
+<img src="IMG-20260507-WA0019.jpg">
+<img src="IMG-20260507-WA0020.jpg">
+<img src="IMG-20260507-WA0021.jpg">
+<img src="IMG-20260613-WA0090.jpg">
 <img src="IMG-20260613-WA0091.jpg">
 <img src="IMG-20260613-WA0092.jpg">
 <img src="IMG-20260613-WA0093.jpg">
 <img src="IMG-20260613-WA0094.jpg">
-<img src="IMG-20260613-WA0096.jpg"></div></div><footer>
-❤️ Made with love for Ammu ❤️
-</footer></div><div id="lightbox" onclick="closeLightbox()">
-<img id="lightboxImg">
-</div><script>
+<img src="IMG-20260613-WA0096.jpg"></div></div></div><div id="finalSurprise"><button id="finalBtn">
+❤️ One Last Thing...
+</button></div><footer>Made With Love ❤️
+
+  
+</footer><div id="lightbox"><img id="lightboxImg"></div><script>
+
+const letter = `
+
+Dear Ammu ❤️,
+
+I don't know if words will ever be enough.
+
+Some people enter our lives and become memories.
+
+You became a feeling.
+
+The truth is our journey was never perfect.
+We had our ups and downs, confusion, silence,
+and moments where neither of us knew what tomorrow would bring.
+
+Yet somehow, every time I think about the moments that made me smile,
+your face is always there.
+
+Your laughter has a strange power.
+It makes worries disappear for a while.
+Your kindness makes people feel valued.
+And your presence brings a comfort that is impossible to explain.
+
+There were days when life felt heavy,
+and a simple message from you made everything feel lighter.
+
+Not because you solved my problems.
+
+But because you were you.
+
+Thank you for every conversation.
+Thank you for every memory.
+Thank you for every smile.
+
+I don't know what life has planned for us.
+
+But I know this.
+
+You'll always be someone special to me.
+
+No matter where life takes us,
+you'll always be my Ammu.
+
+And I'll always smile when I hear you call me Gumma.
+
+Happy Birthday Ammu ❤️
+
+Forever cheering for your happiness,
+
+Your Gumma ❤️
+
+`;
+
+let i=0;
+
+function typeWriter(){
+
+if(i<letter.length){
+
+document.getElementById("typewriter").innerHTML += letter.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,35);
+
+}
+
+}
 
 function openSurprise(){
 
-document.getElementById("welcomeScreen").style.display="none";
-document.getElementById("mainContent").style.display="block";
+document.getElementById("welcome").style.display="none";
 
-for(let i=0;i<100;i++){
+document.getElementById("content").style.display="block";
+
+typeWriter();
+
+for(let i=0;i<120;i++){
 
 setTimeout(()=>{
 
 const heart=document.createElement("div");
 
 heart.innerHTML="💖";
-heart.className="heart";
+
+heart.style.position="fixed";
 
 heart.style.left=Math.random()*window.innerWidth+"px";
+
 heart.style.top=window.innerHeight+"px";
+
+heart.style.fontSize="30px";
 
 document.body.appendChild(heart);
 
 heart.animate([
-{transform:"translateY(0px)",opacity:1},
-{transform:"translateY(-1000px)",opacity:0}
+{transform:"translateY(0)"},
+{transform:"translateY(-1000px)"}
 ],{
 duration:5000
 });
@@ -259,72 +331,78 @@ setTimeout(()=>heart.remove(),5000);
 
 }
 
-function createHeart(x,y){
-
-const heart=document.createElement("div");
-
-heart.innerHTML="❤️";
-heart.className="heart";
-
-heart.style.left=x+"px";
-heart.style.top=y+"px";
-
-document.body.appendChild(heart);
-
-heart.animate([
-{transform:"translateY(0px)",opacity:1},
-{transform:"translateY(-150px)",opacity:0}
-],{
-duration:1500
-});
-
-setTimeout(()=>heart.remove(),1500);
-
-}
-
-document.querySelectorAll(".gallery img").forEach(img=>{
-
-img.addEventListener("click",(e)=>{
-
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightboxImg").src=img.src;
-
-for(let i=0;i<20;i++){
-
-setTimeout(()=>{
-
-createHeart(
-e.clientX+(Math.random()*120-60),
-e.clientY+(Math.random()*120-60)
-);
-
-},i*40);
-
-}
-
-});
-
-});
-
-function closeLightbox(){
-document.getElementById("lightbox").style.display="none";
-}
-
 setInterval(()=>{
 
 const heart=document.createElement("div");
 
-heart.innerHTML="💖";
-heart.className="floating-heart";
+heart.className="floating";
+
+heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+heart.style.animationDuration=(4+Math.random()*6)+"s";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>heart.remove(),10000);
 
 },700);
+
+document.querySelectorAll(".slide-track img").forEach(img=>{
+
+img.addEventListener("click",()=>{
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("lightboxImg").src=img.src;
+
+for(let i=0;i<25;i++){
+
+setTimeout(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=(Math.random()*window.innerWidth)+"px";
+
+heart.style.top=(Math.random()*window.innerHeight)+"px";
+
+heart.style.fontSize="24px";
+
+document.body.appendChild(heart);
+
+heart.animate([
+{opacity:1},
+{opacity:0}
+],{
+duration:1500
+});
+
+setTimeout(()=>heart.remove(),1500);
+
+},i*50);
+
+}
+
+});
+
+});
+
+document.getElementById("lightbox").onclick=function(){
+
+this.style.display="none";
+
+}
+
+document.getElementById("finalBtn").onclick=function(){
+
+alert("❤️ Thank you for being part of my life, Ammu. Some people become memories. You became a feeling. ❤️");
+
+}
 
 </script></body>
 </html>
