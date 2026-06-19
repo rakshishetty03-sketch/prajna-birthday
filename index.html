@@ -166,7 +166,7 @@ document.body.style.display="none";
 
 const password = prompt("A little surprise from your Gumma ❤️");
 
-if(password === "OnlyAmmuKnows❤️"){
+if(password && password.trim() === "OnlyAmmuKnows❤️"){
 
 document.body.style.display="block";
 
@@ -790,6 +790,7 @@ photoModal.style.display="none";
 
 }
 
+function openSite(){document.getElementById("welcome").style.display="none";document.getElementById("mainContent").classList.remove("hidden");}
 const countdown=document.getElementById("countdown");
 
 function updateCountdown(){
