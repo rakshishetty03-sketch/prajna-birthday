@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ammu ❤️</title>
+<style>
+body{margin:0;background:#0b1220;color:#fff;font-family:Arial,sans-serif;overflow:hidden}
+.screen{display:none;height:100vh;padding:25px;box-sizing:border-box;justify-content:center;align-items:center;flex-direction:column;text-align:center}
+.active{display:flex}
+h1,h2{color:#d4af37}
+button{padding:14px 30px;border:none;border-radius:30px;background:#d4af37;color:#111;font-weight:bold}
+img{max-width:90%;max-height:60vh;border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.5)}
+.fade{animation:zoomFade 1.5s ease}
+@keyframes zoomFade{
+0%{opacity:0;transform:scale(1.08)}
+100%{opacity:1;transform:scale(1)}
+}
+.caption{max-width:700px;margin-top:15px;font-size:18px;line-height:1.8}
+iframe{border-radius:16px}
+</style>
+</head>
+<body>
+
+<div id="s1" class="screen active">
+<h1>For Ammu ❤️</h1>
+<p>Not a website. Not a birthday card. Just a few moments I never wanted to forget.</p>
+<button onclick="show(2)">Begin The Journey ✨</button>
+</div>
+
+<div id="s2" class="screen">
+<h2>Some stories are too special for a simple message.</h2>
+<p>So I made this little journey instead.</p>
+<button onclick="show(3)">Continue →</button>
+</div>
+
+<div id="s3" class="screen">
+<h2>The Girl Behind The Smile ✨</h2>
+<p>Some people become important slowly. You became important before I even realised it.</p>
+<img id="slideImg" class="fade" src="IMG-20260422-WA0025.jpg">
+<div id="slideCaption" class="caption">Some smiles stay longer than photographs.</div>
+</div>
+
+<div id="s4" class="screen">
+<h2>A Song That Reminds Me Of You 🎵</h2>
+<iframe src="https://open.spotify.com/embed/track/41poRcXRASGAqDinA3b0Vo" width="90%" height="152"></iframe>
+<button onclick="show(5)">Continue →</button>
+</div>
+
+<div id="s5" class="screen">
+<h2>Dear Ammu</h2>
+<p id="letter" class="caption"></p>
+<button onclick="show(6)">One Last Thing →</button>
+</div>
+
+<div id="s6" class="screen">
+<h1>Some people become memories.</h1>
+<h2>You became a chapter I never wanted to end.</h2>
+<p class="caption">Happy Birthday Ammu ❤️<br><br>— Your Gumma</p>
+</div>
+
+<script>
+const photos=[
+"IMG-20260422-WA0025.jpg","IMG-20260427-WA0021.jpg","IMG-20260429-WA0061.jpg",
+"IMG-20260429-WA0062.jpg","IMG-20260429-WA0082.jpg","IMG-20260507-WA0013.jpg",
+"IMG-20260507-WA0014.jpg","IMG-20260507-WA0015.jpg","IMG-20260507-WA0016.jpg",
+"IMG-20260507-WA0017.jpg","IMG-20260507-WA0018.jpg","IMG-20260507-WA0019.jpg",
+"IMG-20260507-WA0020.jpg","IMG-20260507-WA0021.jpg","IMG-20260613-WA0090.jpg",
+"IMG-20260613-WA0091.jpg","IMG-20260613-WA0092.jpg","IMG-20260613-WA0093.jpg",
+"IMG-20260613-WA0094.jpg","IMG-20260613-WA0096.jpg"
+];
+
+const captions=[
+"Some smiles stay longer than photographs.","You never realised how much comfort you brought.",
+"The world became a little brighter after meeting you.","Your laughter deserves its own playlist.",
+"Beautiful in every frame.","A memory worth keeping.","Moments that still make me smile.",
+"Someone special, always.","Every picture tells a story.","One more reason to smile.",
+"Just Ammu being Ammu.","A beautiful chapter.","Some moments deserve to stay forever.",
+"A smile worth remembering.","The girl behind the smile.","Pure happiness.","A little sunshine.",
+"The memories I treasure.","Still one of my favourites.","And the story continues..."
+];
+
+let idx=0, slideshowStarted=false;
+
+function show(n){
+document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+document.getElementById('s'+n).classList.add('active');
+
+if(n===3 && !slideshowStarted){ slideshowStarted=true; startSlideshow(); }
+if(n===5) typeLetter();
+}
+
+function startSlideshow(){
+const img=document.getElementById('slideImg');
+const caption=document.getElementById('slideCaption');
+
+const timer=setInterval(()=>{
+idx++;
+if(idx>=photos.length){
+clearInterval(timer);
+setTimeout(()=>show(4),1000);
+return;
+}
+img.classList.remove('fade');
+void img.offsetWidth;
+img.src=photos[idx];
+img.classList.add('fade');
+caption.innerText=captions[idx];
+},1500);
+}
+
+let started=false;
+function typeLetter(){
+if(started) return;
+started=true;
+const text=`Dear Ammu,
+
+Happy Birthday.
+
+I spent a long time thinking about what I should write here.
+
+The truth is, no matter how many words I use, they never seem enough when it comes to you.
+
+We never had the easiest story. There were misunderstandings, questions, and moments where neither of us knew what tomorrow would look like.
+
+But through all of that, one thing never changed — the way I felt whenever I talked to you.
+
+You became a part of my days so naturally that I never even noticed when it happened.
+
+Your laughter could instantly make a difficult day feel lighter.
+
+There were days when life felt heavy, and then a message from you would appear. Not because you solved my problems, but because somehow you always made things feel a little less difficult.
+
+What makes you special was never perfection. It was your kindness, your care, and the way you make ordinary moments feel meaningful.
+
+I don't know what life has planned for us, but I do know that meeting you became one of the most beautiful parts of my journey.
+
+Thank you for every memory, every smile, every laugh, and for simply being you.
+
+No matter where life takes us, some people remain special. For me, you will always be one of them.
+
+Happy Birthday Ammu.
+
+With all my warmth,
+
+Your Gumma ❤️`;
+let i=0;
+(function t(){ if(i<text.length){ document.getElementById('letter').innerHTML += text.charAt(i++); setTimeout(t,20);} })();
+}
+</script>
+</body>
+</html>
